@@ -1,6 +1,37 @@
+const jwt = require('jsonwebtoken')
+const { TOKEN_KEY, TOKEN_EXPIRE } = require('../config')
 const usuarioModel = require("../models/usuario.model");
 
 const controlador = {
+  async login(req, res) {
+    const { email, password } = req.body;
+    try {
+      const cliente = {
+        email,
+        password
+      };
+      const result = await usuarioModel.findOne(cliente);
+      if (result) {
+        const payload = {
+          userId: result._id,
+          user: result.nombres,
+          email: result.email
+        }
+        console.log('payload => ', payload);
+        const token = jwt.sign(
+          payload,
+          TOKEN_KEY,
+          { expiresIn: TOKEN_EXPIRE }
+        );
+        res.json({ token });
+      } else {
+        res.status(401).send('Credenciales incorrectas');
+      }
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
+  },
   async listar(req, res) {
     try {
       const result = await usuarioModel.find();

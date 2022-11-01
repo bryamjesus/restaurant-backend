@@ -11,7 +11,7 @@ mongoose.connect("mongodb://127.0.0.1/restaurante")
   });
 
 const categoriaRutas = require("./routes/categoria.route");
-const usuarioRutas = require("./routes/usuario.controller");
+const usuarioRutas = require("./routes/usuario.route");
 
 const app = express();
 app.use(express.json({ limit: "2mb" }));

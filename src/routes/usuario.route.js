@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const controlador = require("../controllers/usuario.controller");
 
+router.post("/login", (req, res) => {
+	controlador.login(req, res);
+});
+
 router.get("/listar", (req, res) => {
   controlador.listar(req, res);
 });
