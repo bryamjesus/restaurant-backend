@@ -29,3 +29,8 @@ npm i
 | POST | http://localhost:3000/api/platos/guardar | Permitirá crear una nueva usuario. |
 | PUT | http://localhost:3000/api/platos/editar/ | Permitirá actualizar los datos de un usuario. Usará como identificador de actualización el campo id del registro. |
 | DELETE | http://localhost:3000/api/platos/eliminar/ | Permitirá eliminar un usuario. Usará como identificador de eliminación el campo id del registro. |
+
+
+## Pruebas
+| 🚀 | [Postman](src/assets/RESTAURANTE.postman_collection.json) |
+|-|-|

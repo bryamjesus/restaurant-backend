@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "eac41def-7ca8-4cd4-8745-a9a1f1867fa5",
+		"name": "RESTAURANTE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9024922"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "CreateCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Bebidas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/categorias/guardar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"categorias",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAllCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/categorias/listar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"categorias",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListOneCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/categorias/detalle/6360901a75257f34211ffe59",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"categorias",
+								"detalle",
+								"6360901a75257f34211ffe59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Bebidas\",\r\n    \"estado\": \"A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/categorias/editar/636090d275257f34211ffe62",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"categorias",
+								"editar",
+								"636090d275257f34211ffe62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{node_base}}/api/categorias/eliminar/636090d975257f34211ffe64",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"categorias",
+								"eliminar",
+								"636090d975257f34211ffe64"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"SDFAD\",\r\n    \"nombres\":\"Bryam\",\r\n    \"email\":\"bryam@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/usuarios/guardar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/usuarios/listar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListOneUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/usuarios/detalle/636095e3a8196b35cc7f57d4",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"detalle",
+								"636095e3a8196b35cc7f57d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"A\",\r\n    \"nombres\":\"Bryam Jesus Talledo Garcia\",\r\n    \"email\":\"bryam@gmail.com\",\r\n    \"password\":\"admin\",\r\n    \"estado\":\"I\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/usuarios/editar/636096b8a8196b35cc7f57d9",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"editar",
+								"636096b8a8196b35cc7f57d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/usuarios/eliminar/636095e3a8196b35cc7f57d4",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"eliminar",
+								"636095e3a8196b35cc7f57d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bryam@gmail.com\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/usuarios/login",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Platos",
+			"item": [
+				{
+					"name": "menu",
+					"item": [
+						{
+							"name": "CreatePlatoFondo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoria\":\"6360902275257f34211ffe5b\",\r\n    \"nombre\":\"Tallarines Rojos\",\r\n    \"precio\" : 25\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{node_base}}/api/platos/guardar",
+									"host": [
+										"{{node_base}}"
+									],
+									"path": [
+										"api",
+										"platos",
+										"guardar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostre",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoria\":\"6360901a75257f34211ffe59\",\r\n    \"nombre\":\"Tartaleta de fresa\",\r\n    \"precio\" :2.5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{node_base}}/api/platos/guardar",
+									"host": [
+										"{{node_base}}"
+									],
+									"path": [
+										"api",
+										"platos",
+										"guardar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateEntrada",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoria\":\"6360908b75257f34211ffe5e\",\r\n    \"nombre\":\"Sopa a la minuta\",\r\n    \"precio\" : 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{node_base}}/api/platos/guardar",
+									"host": [
+										"{{node_base}}"
+									],
+									"path": [
+										"api",
+										"platos",
+										"guardar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateDrinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoria\":\"636090d275257f34211ffe62\",\r\n    \"nombre\":\"Te\",\r\n    \"precio\" : 2.5\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{node_base}}/api/platos/guardar",
+									"host": [
+										"{{node_base}}"
+									],
+									"path": [
+										"api",
+										"platos",
+										"guardar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetAllDish",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/platos/listar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"platos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "GetAllPedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/pedidos/listar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": \"Felipe Mendoza\",\r\n    \"mesa\":\"Mesa01\", \r\n    \"total\": 24,\r\n    \"detalle\":[\r\n        {\"plato\": \"Tequeños\",\r\n            \"precio\":8   \r\n        },\r\n        {\"plato\": \"Tallarines Rojos\",\r\n            \"precio\": 25\r\n        },\r\n        {\"plato\": \"Gaseosa Inca Kola 1.5L\",\r\n            \"precio\":7\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/pedidos/guardar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": \"Bryam Ochoa\",\r\n    \"mesa\":\"Mesa01\", \r\n    \"total\": 28.5,\r\n    \"detalle\":[\r\n        {\"plato\": \"Papa a la huancaina\",\r\n            \"precio\":8   \r\n        },\r\n        {\"plato\": \"Lomo Saltado\",\r\n            \"precio\": 18  \r\n        },\r\n        {\"plato\": \"Flan\",\r\n            \"precio\": 2.5  \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{node_base}}/api/pedidos/editar/63631d35ccc310da87a520bc",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"editar",
+								"63631d35ccc310da87a520bc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kitchen",
+			"item": [
+				{
+					"name": "GetAllKitchen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{node_base}}/api/cocina/listar",
+							"host": [
+								"{{node_base}}"
+							],
+							"path": [
+								"api",
+								"cocina",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzYwOTZiOGE4MTk2YjM1Y2M3ZjU3ZDkiLCJ1c2VyIjoiQnJ5YW0gSmVzdXMgVGFsbGVkbyBHYXJjaWEiLCJlbWFpbCI6ImJyeWFtQGdtYWlsLmNvbSIsImlhdCI6MTY2NzQ0NzU5MiwiZXhwIjoxNjY3NDU0NzkyfQ.CaNchIKk3Ilcoldo_0gLc_PQKZ9I35HSGqf7C1_ZVSg",
+			"type": "string"
+		}
+	]
+}
