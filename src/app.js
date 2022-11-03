@@ -15,7 +15,7 @@ const usuarioRutas = require("./routes/usuario.route");
 const platoRutas = require("./routes/plato.route");
 const pedidoRutas = require("./routes/pedido.route");
 const cocinaRutas = require("./routes/cocina.route");
-
+const auth = require('./middlewares/auth')
 
 const app = express();
 app.use(express.json({ limit: "2mb" }));
@@ -24,8 +24,7 @@ app.use(express.static("public"));
 
 app.use("/api/usuarios", usuarioRutas);
 app.use((req, res, next) => {
-  console.log('Middleware')
-  next()
+  auth(req, res, next)
 })
 
 app.use("/api/categorias", categoriaRutas);
