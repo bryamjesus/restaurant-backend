@@ -23,6 +23,7 @@ app.use(cors());
 app.use(express.static("public"));
 
 app.use("/api/usuarios", usuarioRutas);
+
 app.use((req, res, next) => {
   auth(req, res, next)
 })
