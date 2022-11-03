@@ -6,12 +6,12 @@ const platoSchema = new Schema({
   mesa: { type: String, required: true },
   total: { type: String, required: true },
   fecha: { type: String, default: Date.now },
-  detalle: {
+  detalle: [{
     plato: { type: String, required: true },
     precio: { type: Number, required: true },
-    // P: pendiente || C: cocinado || L: Listo || E: entregado
-    estado: { type: String, default: 'P' }
-  },
+    // P:pendiente | C:cocinando | L:listo | E:entregado | N:anulado
+    estado: { type: String, default: "P" }
+  }],
   estado: { type: String, default: 'A' } // A: activo || T: terminado || N: anulado
 }, {
   versionKey: false
