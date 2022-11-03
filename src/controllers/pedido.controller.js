@@ -14,7 +14,7 @@ const controlador = {
     const { cliente, mesa, total, detalle } = req.body;
     const dato = new pedidoModel();
     dato.cliente = cliente;
-    dato.cliente = mesa;
+    dato.mesa = mesa;
     dato.total = total;
     dato.detalle = detalle;
     try {

@@ -17,4 +17,4 @@ const platoSchema = new Schema({
   versionKey: false
 })
 
-module.exports = mongoose.model('plato', platoSchema)
+module.exports = mongoose.model('pedido', platoSchema)
