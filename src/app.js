@@ -21,8 +21,14 @@ const app = express();
 app.use(express.json({ limit: "2mb" }));
 app.use(cors());
 app.use(express.static("public"));
-app.use("/api/categorias", categoriaRutas);
+
 app.use("/api/usuarios", usuarioRutas);
+app.use((req, res, next) => {
+  console.log('Middleware')
+  next()
+})
+
+app.use("/api/categorias", categoriaRutas);
 app.use("/api/platos", platoRutas);
 app.use("/api/pedidos", pedidoRutas);
 app.use("/api/cocina", cocinaRutas);
