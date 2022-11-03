@@ -20,3 +20,12 @@ npm i
 | POST | http://localhost:3000/api/usuarios/guardar | Permitirá crear una nueva usuario. |
 | PUT | http://localhost:3000/api/usuarios/editar/ | Permitirá actualizar los datos de un usuario. Usará como identificador de actualización el campo id del registro. |
 | DELETE | http://localhost:3000/api/usuarios/eliminar/ | Permitirá eliminar un usuario. Usará como identificador de eliminación el campo id del registro. |
+
+## Platos
+| Método | Ruta | Descripción |
+|-|-|-|
+| GET | http://localhost:3000/api/platos/listar | Listará los todos las platos. |
+| GET | http://localhost:3000/api/platos/detalle/ | Mostrará el detalle de un usuario. |
+| POST | http://localhost:3000/api/platos/guardar | Permitirá crear una nueva usuario. |
+| PUT | http://localhost:3000/api/platos/editar/ | Permitirá actualizar los datos de un usuario. Usará como identificador de actualización el campo id del registro. |
+| DELETE | http://localhost:3000/api/platos/eliminar/ | Permitirá eliminar un usuario. Usará como identificador de eliminación el campo id del registro. |
