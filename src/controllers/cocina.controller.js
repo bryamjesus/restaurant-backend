@@ -5,8 +5,16 @@ const controlador = {
     const result = await pedidoModel.find({ "detalle.estado": "P" });
     let datos = [];
     result.forEach(pedido => {
+      console.log(pedido.mesa);
       const detalle = pedido.detalle;
-      const pendientes = detalle.filter(elem => elem.estado == "P");
+      const pendientes = detalle.filter(elem => elem.estado == "P").map(elem => {
+        return {
+          _id: elem._id,
+          mesa: pedido.mesa,
+          plato: elem.plato,
+          estado: elem.estado
+        }
+      });
       datos = [...datos, ...pendientes];
     });
     res.json(datos);

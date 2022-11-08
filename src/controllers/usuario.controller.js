@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken')
-const { TOKEN_KEY, TOKEN_EXPIRE } = require('../config')
+const jwt = require("jsonwebtoken");
+const { TOKEN_KEY, TOKEN_EXPIRE } = require("../config");
 const usuarioModel = require("../models/usuario.model");
 
 const controlador = {
@@ -74,7 +74,7 @@ const controlador = {
       nombres,
       email,
       password,
-      estado,
+      estado
     };
     try {
       const result = await usuarioModel.findByIdAndUpdate(id, datos, { "new": true });
