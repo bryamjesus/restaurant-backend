@@ -42,12 +42,20 @@ const controlador = {
   },
   async editar(req, res) {
     const { id } = req.params;
-    const { categoria, nombre, precio, imagen, imagen_actual, imagen64, estado } = req.body;
+    const {
+      categoria,
+      nombre,
+      precio,
+      imagen,
+      imagen_actual,
+      imagen64,
+      estado,
+    } = req.body;
     const datos = {
       categoria_id: categoria,
       nombre,
       precio,
-      estado
+      estado,
     };
     if (imagen) {
       const path_img = "./public/platos/";
@@ -59,7 +67,9 @@ const controlador = {
       dato.imagen = imagen;
     }
     try {
-      const result = await platoModel.findByIdAndUpdate(id, datos, { "new": true });
+      const result = await platoModel.findByIdAndUpdate(id, datos, {
+        new: true,
+      });
       res.json(result);
     } catch (error) {
       console.log(error);
@@ -78,7 +88,7 @@ const controlador = {
       console.log(error);
       res.sendStatus(500);
     }
-  }
+  },
 };
 
 module.exports = controlador;

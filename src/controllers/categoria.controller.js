@@ -37,10 +37,12 @@ const controlador = {
     const { nombre, estado } = req.body;
     const datos = {
       nombre,
-      estado
+      estado,
     };
     try {
-      const result = await categoriaModel.findByIdAndUpdate(id, datos, { "new": true });
+      const result = await categoriaModel.findByIdAndUpdate(id, datos, {
+        new: true,
+      });
       res.json(result);
     } catch (error) {
       console.log(error);
@@ -56,7 +58,7 @@ const controlador = {
       console.log(error);
       res.sendStatus(500);
     }
-  }
+  },
 };
 
 module.exports = controlador;

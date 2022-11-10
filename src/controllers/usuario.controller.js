@@ -8,7 +8,7 @@ const controlador = {
     try {
       const cliente = {
         email,
-        password
+        password,
       };
       const result = await usuarioModel.findOne(cliente);
       if (result) {
@@ -16,17 +16,13 @@ const controlador = {
           userId: result._id,
           user: result.nombres,
           email: result.email,
-          role: result.tipo
-        }
-        console.log('payload => ', payload);
-        const token = jwt.sign(
-          payload,
-          TOKEN_KEY,
-          { expiresIn: TOKEN_EXPIRE }
-        );
+          role: result.tipo,
+        };
+        console.log("payload => ", payload);
+        const token = jwt.sign(payload, TOKEN_KEY, { expiresIn: TOKEN_EXPIRE });
         res.json({ token });
       } else {
-        res.status(401).send('Credenciales incorrectas');
+        res.status(401).send("Credenciales incorrectas");
       }
     } catch (error) {
       console.log(error);
@@ -75,10 +71,12 @@ const controlador = {
       nombres,
       email,
       password,
-      estado
+      estado,
     };
     try {
-      const result = await usuarioModel.findByIdAndUpdate(id, datos, { "new": true });
+      const result = await usuarioModel.findByIdAndUpdate(id, datos, {
+        new: true,
+      });
       res.json(result);
     } catch (error) {
       console.log(error);
@@ -94,7 +92,7 @@ const controlador = {
       console.log(error);
       res.sendStatus(500);
     }
-  }
+  },
 };
 
 module.exports = controlador;

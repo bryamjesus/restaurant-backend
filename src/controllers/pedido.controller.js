@@ -43,16 +43,18 @@ const controlador = {
       mesa,
       total,
       detalle,
-      estado
+      estado,
     };
     try {
-      const result = await pedidoModel.findByIdAndUpdate(id, datos, { "new": true });
+      const result = await pedidoModel.findByIdAndUpdate(id, datos, {
+        new: true,
+      });
       res.json(result);
     } catch (error) {
       console.log(error);
       res.sendStatus(500);
     }
-  }
+  },
 };
 
 module.exports = controlador;
