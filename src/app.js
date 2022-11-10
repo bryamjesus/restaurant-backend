@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://127.0.0.1/restaurante-g1")
+  .connect("mongodb://127.0.0.1/restaurante") // restaurante-g1
   .then(() => {
     console.log("Conectados a la base de datos");
   })
