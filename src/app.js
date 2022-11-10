@@ -3,12 +3,12 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://127.0.0.1/restaurante-g1")
-  .then(() => {
+.then(()=>{
     console.log("Conectados a la base de datos");
-  })
-  .catch((error) => {
+})
+.catch((error)=>{
     console.log("Error al conectar DB: ", error);
-  });
+});
 
 const auth = require("./middlewares/auth");
 const categoriaRutas = require("./routes/categoria.route");
@@ -18,7 +18,7 @@ const pedidoRutas = require("./routes/pedido.route");
 const cocinaRutas = require("./routes/cocina.route");
 
 const app = express();
-app.use(express.json({ limit: "2mb" }));
+app.use(express.json({limit:"2mb"}));
 app.use(cors());
 app.use(express.static("public"));
 
@@ -29,6 +29,6 @@ app.use("/api/platos", platoRutas);
 app.use("/api/pedidos", pedidoRutas);
 app.use("/api/cocina", cocinaRutas);
 
-app.listen(3001, () => {
-  console.log("Servidor iniciado en el puerto 3001");
+app.listen(3001, ()=>{
+    console.log("Servidor iniciado en el puerto 3001");
 });
