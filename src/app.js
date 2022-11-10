@@ -30,6 +30,6 @@ app.use("/api/platos", platoRutas);
 app.use("/api/pedidos", pedidoRutas);
 app.use("/api/cocina", cocinaRutas);
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("Servidor iniciado en el puerto 3001");
 });
