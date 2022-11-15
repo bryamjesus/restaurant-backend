@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const http = require("http");
+const { Server } = require("socket.io");
 
 mongoose
   .connect("mongodb://127.0.0.1/restaurante") // restaurante-g1
@@ -30,6 +32,21 @@ app.use("/api/platos", platoRutas);
 app.use("/api/pedidos", pedidoRutas);
 app.use("/api/cocina", cocinaRutas);
 
-app.listen(3000, () => {
+const httpServer = http.createServer(app);
+const io = new Server(httpServer);
+
+io.on("connection", (socket) => {
+  console.log("Conectado");
+  socket.on("channel-cocina-pedido", (mensaje) => {
+    console.log("Mensaje del mozo: ", mensaje);
+    io.emit("channel-cocina-pedido", mensaje);
+  });
+  socket.on("channel-cocina-entrega", (mensaje) => {
+    console.log("Mensaje desde la cocina: ", mensaje);
+    io.emit("channel-cocina-entrega", mensaje);
+  });
+});
+
+httpServer.listen(3000, () => {
   console.log("Servidor iniciado en el puerto 3001");
 });
